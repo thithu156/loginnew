@@ -45,7 +45,7 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, name: ' + response.name + ' image: ' + response.photo;
+        'Thanks for logging in, name: ' + response.name + ' image: ' + response.picture + ' Email: ' + response.email;
     });
   }
 
