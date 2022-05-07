@@ -45,7 +45,7 @@
     FB.api(
       '/me',
       'GET', 
-      {"fields":"id,name,email,picture.height(200).width(200)"},
+      {"fields":"id,name,email,picture"},
       function(response) {
         document.getElementById('status').innerHTML =
           ' name: ' + response.name + ' email: ' + response.email + ' image: <img src="'+ response.picture.url'+" alt="">';
