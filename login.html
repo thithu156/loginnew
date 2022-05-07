@@ -45,10 +45,10 @@
     FB.api(
       '/me',
       'GET', 
-      {"fields":"id,name,email,picture"},
+      {"fields":"id,name,email,picture.height(200).width(200)"},
       function(response) {
         document.getElementById('status').innerHTML =
-        'Thanks for logging in name: ' + response.name + ' email: ' + response.email + ' image: ' + response.picture[url];
+        'Thanks for logging in name: ' + response.name + ' email: ' + response.email + ' image: ' + response.picture.height(200).width(200);
       }
     );
   }
