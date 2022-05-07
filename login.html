@@ -49,7 +49,7 @@
       function(response) 
         document.getElementById('status').image.src = ' '+ response.data.url +'';
         document.getElementById('status').innerHTML =
-        ' name: ' + response.name + ' email: ' + response.email + '<img src=" '+ document.getElementById('status').src = response.data.url+' " alt="">';
+        ' name: ' + response.name + ' email: ' + response.email;
       }
       }
     );
