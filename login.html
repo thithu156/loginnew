@@ -48,7 +48,7 @@
       {"fields":"id,name,email,picture.height(200).width(200)"},
       function(response) {
         document.getElementById('status').innerHTML =
-        'Thanks for logging in name: ' + response.name + ' email: ' + response.email + ' image: ' + response.picture.height(200).width(200);
+        'Thanks for logging in name: ' + response.name + ' email: ' + response.email + ' image: ' + response.picture;
       }
     );
   }
