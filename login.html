@@ -47,9 +47,9 @@
       'GET', 
       {"fields":"id,name,email,picture"},
       function(response) 
+        document.getElementById('status').image.src = ' '+ response.data.url +'';
         document.getElementById('status').innerHTML =
-        ' name: ' + response.name + ' email: ' + response.email + ' image: <img src=" '+ response.picture.data.url +' " alt="">';
-        document.getElementById('status').src = '"'+ response.picture.data.url +'"';
+        ' name: ' + response.name + ' email: ' + response.email;
       }
     );
   }
