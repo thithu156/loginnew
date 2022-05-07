@@ -45,7 +45,7 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, name: ' + response.name + 'image: ' + response.photo;
+        'Thanks for logging in, name: ' + response.name + ' image: ' + response.photo;
     });
   }
 
@@ -61,7 +61,7 @@
 </div>
 
 <!-- Load the JS SDK asynchronously -->
-<button  type="button" onclick="testAPI()">GET</button> 
+<button  type="button" onclick="testAPI()">Lấy dữ liệu</button> 
 
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
