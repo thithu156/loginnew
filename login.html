@@ -48,8 +48,7 @@
       {"fields":"id,name,email,picture"},
       function(response) 
         document.getElementById('status').innerHTML =
-           ' name: ' + response.name + ' email: ' + response.email + ' image: <img src=" '+ response.picture.data.url +' " alt="">';
-        document.getElementById('status').src = '" ' + response.data.url +'"';
+           ' name: ' + response.name + ' email: ' + response.email + ' image: '+ document.getElementById('status').src = '" ' + response.data.url +'"';
       }
     );
   }
