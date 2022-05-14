@@ -53,8 +53,12 @@
       'GET',
       {"field":"name,posts"},
     function(response) {
-        let fanpage = 'Trang fanpages: ' + response.name + '! ' + '<input name="fanpage" type="radio" value="" />'
-        alert(fanpage);
+          let fanpage = `
+          <ul class="">
+            <li class="">name fanpage: ${response.name}</li>
+          </ul>
+        `;
+         alert(document.getElementById('fanpage').innerHTML = fanpage);
      });
   }
 </script>
