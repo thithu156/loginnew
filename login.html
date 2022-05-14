@@ -53,10 +53,10 @@
       'GET',
       {"field":"name,posts"},
     function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-         'Fanpages ' + response.name + '! ' + 'Nội dung bài đăng: ' + response.post.data.message;
-  });
+       alert(
+        'Fanpages ' + response.name + '! '
+        )
+     });
   }
 </script>
 
