@@ -51,7 +51,7 @@
     FB.api(
       '/100699045974748',
       'GET',
-      {"field":"name"},
+      {"field":"name,posts"},
     function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
