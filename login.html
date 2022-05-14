@@ -53,9 +53,8 @@
       'GET',
       {"field":"name,posts"},
     function(response) {
-       alert(
-           'Trang fanpages' + response.name + '! ' + '<input name="fanpage" type="radio" value="" />'
-        )
+      let fanpage = 'Trang fanpages' + response.name + '! ' + '<input name="fanpage" type="radio" value="" />'
+      alert(fanpage);
      });
   }
 </script>
