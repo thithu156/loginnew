@@ -55,7 +55,7 @@
     function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-         'Fanpages ' + response.name + '! ' + 'Nội dung bài đăng: ' + response.post.data.message;
+         'Fanpages ' + response.name + '! ' + 'Nội dung bài đăng: ' + response.posts.data.message;
   });
   }
 </script>
