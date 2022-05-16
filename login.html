@@ -1,4 +1,13 @@
-function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+
+  function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
     console.log('statusChangeCallback');
     console.log(response);                   // The current login status of the person.
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
@@ -42,7 +51,7 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
     FB.api(
     '/me',
     'GET',
-    {"fields":"id,name,email,ids_for_pages"},
+    {"fields":"id,name,email"},
   function(response) {
        let username = `
           <ul class="">
@@ -67,3 +76,5 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
 
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+</body>
+</html>
