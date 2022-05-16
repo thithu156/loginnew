@@ -57,9 +57,14 @@
       console.log(response.data[0].id);
       console.log(response.data[0].global_brand_page_name);
       console.log(response.data[0].posts.data[0].message);
-      document.getElementById('status').innerHTML= ' Tên fanpage: ' + response.data[0].global_brand_page_name +
-                                                   ' Bài đăng thứ 1: ' + response.data[0].posts.data[0].message +
-                                                   ' Ngày đăng: ' + response.data[0].posts.data[0].created_time;
+      let fanpage = `
+          <ul class="">
+            <li class="">tên fanpage: ${response.data[0].global_brand_page_name}</li>
+            <li class="">nội dung bài đăng thứ 1: ${response.data[0].posts.data[0].message}</li>
+            <li class="">ngày đăng: ${response.data[0].posts.data[0].created_time}</li>
+          </ul>
+        `;
+      document.getElementById('status').innerHTML = fanpage;
     });
   }
 </script>
