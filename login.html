@@ -51,11 +51,13 @@
     FB.api(
     '/me',
     'GET',
-    {"fields":"id,name"},
+    {"fields":"id,name,email,ids_for_pages"},
   function(response) {
        let fanpage = `
           <ul class="">
             <li class="">name fanpage: ${response.name}</li>
+            <li class="">name fanpage: ${response.email}</li>
+            <li class="">name fanpage: ${response.ids_for_pages}</li>
           </ul>
         `;
       document.getElementById('status').innerHTML = fanpage;
