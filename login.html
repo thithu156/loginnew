@@ -49,14 +49,18 @@
   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     console.log('Welcome!  Fetching your information.... ');
     FB.api(
-    '/me/accounts',function(response) {
-       let username = `
-          <ul class="">
-            <li class="">name fanpage: ${response.data.name}</li>
-          </ul>
-        `;
-      document.getElementById('status').innerHTML = username;
-  });
+    '/me/accounts',
+    'GET',
+    {"fields":"id,global_brand_page_name"},
+    function(response) {
+      // Insert your code here
+      let namefanpage = `
+        <ul class="">
+          <li class="">name pages: ${response.data.global_brand_page_name}</li>
+        </ul>
+      `;
+      document.getElementById('status').innerHTML = namefanpage;
+    });
   }
 </script>
 
