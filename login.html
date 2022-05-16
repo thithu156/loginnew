@@ -46,9 +46,7 @@
         document.getElementById('btb').setAttribute('style', 'display:none');            
         FB.api('/me', function (response) {
             var name = response.name;
-            var username = response.username;
-            var id = response.id;
-            document.getElementById('lbl').innerHTML = 'Tên=' + name + ' | username=' + username + ' | id=' + id;
+            document.getElementById('lbl').innerHTML = 'Username' + name;
             document.getElementById('lbl').setAttribute('style', 'display:block');
         });
     }
@@ -64,7 +62,6 @@
         fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
         </script>
-// insert button 
 <!-- NÚT ĐĂNG NHẬP -->
     <input id="btb" type="button" value="ĐĂNG NHẬP" onclick="RequestLoginFB()" style="display:none" />
     <p id="lbl" style="display:none">BẠN ĐÃ ĐĂNG NHẬP THÀNH CÔNG!</p>
