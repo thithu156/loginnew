@@ -59,6 +59,7 @@
       console.log(response.data[0].posts.data[0].message);
       let fanpage = `
           <ul class="">
+            <li class="">Số fanpage: ${response.data.length}</li>
             <li class="">tên fanpage: ${response.data[0].global_brand_page_name}</li>
             <li class="">nội dung bài đăng thứ 1: ${response.data[0].posts.data[0].message}</li>
             <li class="">ngày đăng: ${response.data[0].posts.data[0].created_time}</li>
@@ -87,6 +88,7 @@
 <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
  <!--insert username-->
 <div id="status">
+  <h2>tên fanpage và bài post</h2>
 </div>
 <div id="getNamePage">
 </div>
