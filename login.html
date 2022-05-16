@@ -56,7 +56,9 @@
       // Insert your code here
       console.log(response.data[0].id);
       console.log(response.data[0].global_brand_page_name);
+      console.log(response.data[0].posts.data[0].message);
       document.getElementById('status').innerHTML= 'name fanpage: ' + response.data[0].global_brand_page_name;
+      document.getElementById('status').innerHTML= 'Content 1: ' + response.data[0].posts.data[0].message;
     });
   }
 </script>
