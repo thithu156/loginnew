@@ -49,13 +49,10 @@
   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     console.log('Welcome!  Fetching your information.... ');
     FB.api(
-    '/me',
-    'GET',
-    {"fields":"id,name,email"},
-  function(response) {
+    '/me/accounts',function(response) {
        let username = `
           <ul class="">
-            <li class="">user name: ${response.name}</li>
+            <li class="">name fanpage: ${response.data.name}</li>
           </ul>
         `;
       document.getElementById('status').innerHTML = username;
