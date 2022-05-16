@@ -66,6 +66,13 @@
         `;
       document.getElementById('status').innerHTML = fanpage;
       console.log(response.data.length);
+      // dùng mảng for
+      let length = response.data.length;
+      let namepages;
+      for(var i = 0; i<=length; i++){
+        namepages = `<p>fanpage thứ ${response.data[i].global_brand_page_name}</p><br>`
+        document.getElementById('getNamePage').innerHTML = namepages;
+      }
     });
   }
 </script>
@@ -80,7 +87,8 @@
  <!--insert username-->
 <div id="status">
 </div>
-
+<div id="getNamePage">
+</div>
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
