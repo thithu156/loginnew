@@ -48,17 +48,18 @@
        }(document, 'script', 'facebook-jssdk'));
   function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('FB.api(
-  '/me',
-  'GET',
-  {"fields":"id,name"},function(response) {
-      let fanpage = `
+    FB.api(
+    '/me',
+    'GET',
+    {"fields":"id,name"},
+  function(response) {
+       let fanpage = `
           <ul class="">
             <li class="">name fanpage: ${response.name}</li>
           </ul>
         `;
       document.getElementById('status').innerHTML = fanpage;
-    });
+  });
   }
 </script>
 
