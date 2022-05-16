@@ -51,7 +51,7 @@
     FB.api(
     '/me/accounts',
     'GET',
-    {"fields":"id,global_brand_page_name"},
+    {"fields":"id,global_brand_page_name,posts"},
     function(response) {
       // Insert your code here
       console.log(response.data[0].id);
