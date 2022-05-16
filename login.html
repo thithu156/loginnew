@@ -54,13 +54,7 @@
     {"fields":"id,global_brand_page_name"},
     function(response) {
       // Insert your code here
-      let namefanpage = `
-        <ul class="">
-          <li class="">name pages: ${response.global_brand_page_name}</li>
-        </ul>
-      `;
       console.log(response);
-      document.getElementById('status').innerHTML = namefanpage;
     });
   }
 </script>
