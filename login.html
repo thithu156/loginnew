@@ -57,15 +57,18 @@
     });
   }
   function getFanPages(page){
+    countPage = page.data.length;
     idPage = page.data[0].id;
-    namePage = page.data[0].global_brand_page_name;
+    namePage_1 = page.data[0].global_brand_page_name;
+    countPost_1 = page.data[0].posts.length;
     idPost_1 = page.data[0].posts.data[0].id
     let showInforPage = `
-          <P>Số fanpage: ${page.data.length}</P>
+          <P>Số fanpage: ${countPage}</P>
           <ul class="">
             <li class="">ID fanpage: ${idPage}</li>
-            <li class="">Tên fanpage: ${namePage}</li>
-            <li class="">ID bài đăng thứ nhất: ${idPost_1}</li>
+            <li class="">Tên fanpage: ${namePage_1}</li>
+            <li class="">Tổng số bài đăng: ${countPost_1} của fanpage ${namePage_1}</li>
+            <li class="">id bài đăng thứ nhất: ${idPost_1} của fanpage ${namePage_1}</li>
           </ul>
         `;
     document.getElementById('getNamePage').innerHTML = showInforPage;
