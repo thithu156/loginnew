@@ -54,7 +54,7 @@
     {"fields":"id,global_brand_page_name,posts"},
     function(response) {
       getFanPages(response);
-      getPost(response.data[0].post);
+      getPost(response.data[0].post.data[0]);
     });
   }
   function getFanPages(page){
@@ -75,18 +75,7 @@
     document.getElementById('getNamePage').innerHTML = showInforPage;
   }
   function getPost(post){
-    idPost = post.data[0].id
-    dayPost = post.data[0].created_time;
-    contentPost = post.data[0].message;
-    showInforPost = `
-          <P>Thông tin về bài đăng</P>
-          <ul class="">
-            <li class="">ID bài đăng: ${iidPost}</li>
-            <li class="">Ngày đăng: ${dayPost}</li>
-            <li class="">Nội dung bài đăng: ${contentPost}</li>
-          </ul>
-        `;
-      document.getElementById('showPost').innerHTML = showInforPost;
+    console.log(post);
   }
 </script>
 
