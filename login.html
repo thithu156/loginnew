@@ -53,7 +53,7 @@
     'GET',
     {"fields":"id,global_brand_page_name,posts"},
     function(response) {
-      // Insert your code here
+      // get data
       console.log(response.data[0].id);
       console.log(response.data[0].global_brand_page_name);
       console.log(response.data[0].posts.data[0].message);
@@ -66,15 +66,24 @@
           </ul>
         `;
       document.getElementById('status').innerHTML = fanpage;
-      console.log(response.data.length);
-      // dùng mảng for
-      
-      for(var i = 0; i<=response.data.length; i++){
-        var namepages;
-        namepages = `<p>fanpage: ${response.data[i].global_brand_page_name}</p><br>`;
-        namepages += namepages;
-      }
-      document.getElementById('getNamePage').innerHTML = namepages;
+      console.log(response.data.length);   
+    });
+    function getComment(){
+    console.log('Welcome!  get comment ');
+    FB.api(
+    '/100699045974748_110761358301850/comments',
+    'GET',
+    {"fields":"id,created_time,message"},
+    function(response) {
+      // Insert your code here
+      let showComments = `
+          <ul class="">
+            <li class="">Số comment: ${response.data.length}</li>
+            <li class="">ngày comment: ${response.data[0].created_time}</li>
+            <li class="">nội dung comment: ${response.data[0].message}</li>
+          </ul>
+        `;
+      document.getElementById('getComment').innerHTML = showComments;
     });
   }
 </script>
@@ -91,6 +100,9 @@
   <h2>tên fanpage và bài post</h2>
 </div>
 <div id="getNamePage">
+</div>
+ <!--Get comment-->
+<div id="getComment">
 </div>
 <!-- Load the JS SDK asynchronously -->
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
