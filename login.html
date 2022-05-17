@@ -57,14 +57,16 @@
     });
   }
   function getFanPages(page){
-    console.log(page);
+    idPage = page.data[0].id;
+    namePage = page.data[0].global_brand_page_name;
     let showInforPage = `
-          <h3>Số fanpage: ${page.data.length}</h3>
+          <P>Số fanpage: ${page.data.length}</P>
           <ul class="">
-            <li class="">Tên fanpage: ${page.data[0].global_brand_page_name}</li>
+            <li class="">ID fanpage: ${idPage}</li>
+            <li class="">Tên fanpage: ${namePage}</li>
           </ul>
         `;
-    document.getElementById('getNamePage').innerHTML = showInforPage;
+    document.getElementById('getNamePage') = showInforPage;
   }
 </script>
 
