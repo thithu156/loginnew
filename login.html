@@ -46,40 +46,24 @@
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
-  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-    console.log('Welcome!  Fetching your information.... ');
+  function testAPI() {                    
+    console.log('get fanpage, content');
     FB.api(
     '/me/accounts',
     'GET',
     {"fields":"id,global_brand_page_name,posts"},
     function(response) {
-      // get data
-      console.log(response.data[0].id);
-      console.log(response.data[0].global_brand_page_name);
-      console.log(response.data[0].posts.data[0].message);
-      let fanpage = `
+      getFanPages(response);
+    });
+  }
+  getFanPages(page){
+    let showFanpages = `
+          <h3>Số fanpage: ${page.length}</h3>
           <ul class="">
-            <li class="">Số fanpage: ${response.data.length}</li>
-            <li class="">tên fanpage: ${response.data[0].global_brand_page_name}</li>
-            <li class="">nội dung bài đăng thứ 1: ${response.data[0].posts.data[0].message}</li>
-            <li class="">ngày đăng: ${response.data[0].posts.data[0].created_time}</li>
+            <li class="">User ID: ${page.global_brand_page_name}</li>
           </ul>
         `;
-      document.getElementById('status').innerHTML = fanpage;
-      console.log(response.data.length);
-    });
-    getComment();
-  }
-  function getComment(){
-    console.log('Welcome!  get comment ');
-    FB.api(
-    '/100699045974748_110761358301850/comments',
-    'GET',
-    {"fields":"id,created_time,message"},
-    function(response) {
-      // Insert your code here
-     console.log(response);
-    });
+        document.getElementById('status')=showFanpages;
   }
 </script>
 
