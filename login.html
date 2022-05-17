@@ -61,13 +61,12 @@
   function commentAPI() {                      
     console.log('get comment:...');
     FB.api(
-    '/100699045974748_110761358301850',
+    '/100699045974748_110761358301850/comments',
     'GET',
-    {"fields":"comments"},
+    {"fields":"created_time,message,id"},
     function(response) {
-      // Insert your code here
-      console.log(response);
-    });
+     console.log(response);
+  });
   }
   function getFanPages(page){
     countPage = page.data.length;
