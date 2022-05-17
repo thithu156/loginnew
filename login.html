@@ -59,11 +59,13 @@
   function getFanPages(page){
     idPage = page.data[0].id;
     namePage = page.data[0].global_brand_page_name;
+    idPost_1 = page.data[0].posts.data[0].id
     let showInforPage = `
           <P>Số fanpage: ${page.data.length}</P>
           <ul class="">
             <li class="">ID fanpage: ${idPage}</li>
             <li class="">Tên fanpage: ${namePage}</li>
+            <li class="">ID bài đăng thứ nhất: ${idPost_1}</li>
           </ul>
         `;
     document.getElementById('getNamePage').innerHTML = showInforPage;
