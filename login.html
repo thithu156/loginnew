@@ -54,7 +54,7 @@
     {"fields":"id,global_brand_page_name,posts"},
     function(response) {
       getFanPages(response);
-      getPost(response.data[0].post);
+      getPost(response.data[0].posts);
     });
   }
   function getFanPages(page){
