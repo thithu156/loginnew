@@ -56,18 +56,8 @@
     function(response) {
       getFanPages(response);
       getPost(response.data[0].posts);
+      getComment(response.data[0].posts.data[0].comments);
     });
-  }
-  function commentAPI() {                      
-    console.log('get comment:...');
-    FB.api(
-    '/100699045974748_110761358301850/comments',
-    'GET',
-    {"fields":"created_time,message,id"},
-    function(response) {
-     console.log('test data comment');
-     console.log(response);
-  });
   }
   function getFanPages(page){
     countPage = page.data.length;
@@ -100,6 +90,9 @@
           </ul>
         `;
       document.getElementById('showPost').innerHTML = showInforPost;
+  }
+  function getComment(comment){
+    console.log(comment);
   }
 </script>
 
