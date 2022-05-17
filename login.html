@@ -11,7 +11,7 @@
     console.log('statusChangeCallback');
     console.log(response);                   // The current login status of the person.
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
-      testAPI();  
+      testAPI(); 
     } else {                                 // Not logged into your webpage or we are unable to tell.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this webpage.';
@@ -46,24 +46,26 @@
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
-  function testAPI() {                    
+  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     console.log('get fanpage, content');
     FB.api(
     '/me/accounts',
     'GET',
-    {"fields":"id,global_brand_page_name,posts{comments}"},
+    {"fields":"id,global_brand_page_name,posts"},
     function(response) {
       getFanPages(response);
       getPost(response.data[0].posts);
+      getComment(response.data[0].posts.data[0].comments)
     });
   }
   function getFanPages(page){
+    console.log(page);
     countPage = page.data.length;
     idPage = page.data[0].id;
     namePage_1 = page.data[0].global_brand_page_name;
     countPost_1 = page.data[0].posts.length;
     idPost_1 = page.data[0].posts.data[0].id
-    let showInforPage = `
+    showInforPage = `
           <P>Số fanpage: ${countPage}</P>
           <ul class="">
             <li class="">ID fanpage: ${idPage}</li>
@@ -74,7 +76,7 @@
         `;
     document.getElementById('getNamePage').innerHTML = showInforPage;
   }
- function getPost(post){
+  function getPost(post){
     console.log(post);
     idPost = posts.data[0].id
     dayPost = post.data[0].created_time;
@@ -89,6 +91,9 @@
         `;
       document.getElementById('showPost').innerHTML = showInforPost;
   }
+  function getComment(comment){
+    console.log(comment);
+  }
 </script>
 
 
@@ -100,13 +105,11 @@
 <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
  <!--insert username-->
 <div id="status">
-  <h2>tên fanpage và bài post</h2>
 </div>
+<!--get fanpage, post-->
 <div id="getNamePage">
 </div>
- <!--Get comment-->
-<div id="getComment">
-</div>
+<!--Get comment-->
 <div id="showPost">
 </div>
 <!-- Load the JS SDK asynchronously -->
