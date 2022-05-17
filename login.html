@@ -54,6 +54,7 @@
     {"fields":"id,global_brand_page_name,posts"},
     function(response) {
       getFanPages(response);
+      getPost(response);
     });
   }
   function getFanPages(page){
@@ -72,16 +73,9 @@
           </ul>
         `;
     document.getElementById('getNamePage').innerHTML = showInforPage;
-    getPost();
   }
-  function getPost(){
-    FB.api(
-    '/100699045974748_110761358301850/comments',
-    'GET',
-    {"fields":"id,created_time,message"},
-    function(response) {
-      console.log(response);
-    });
+  function getPost(post){
+    console.log(post);
   }
 </script>
 
