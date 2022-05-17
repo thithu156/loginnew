@@ -66,7 +66,8 @@
           </ul>
         `;
       document.getElementById('status').innerHTML = fanpage;
-      console.log(response.data.length);   
+      console.log(response.data.length);
+      getComment();
     });
     function getComment(){
     console.log('Welcome!  get comment ');
