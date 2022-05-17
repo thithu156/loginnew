@@ -76,6 +76,18 @@
   }
   function getPost(post){
     console.log(post);
+    idPost = posts.data[0].id
+    dayPost = post.data[0].created_time;
+    contentPost = post.data[0].message;
+    showInforPost = `
+          <P>Thông tin về bài đăng</P>
+          <ul class="">
+            <li class="">ID bài đăng: ${idPost}</li>
+            <li class="">Ngày đăng: ${dayPost}</li>
+            <li class="">Nội dung bài đăng: ${contentPost}</li>
+          </ul>
+        `;
+      document.getElementById('showPost').innerHTML = showInforPost;
   }
 </script>
 
