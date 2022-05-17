@@ -58,6 +58,13 @@
   }
   function getFanPages(page){
     console.log(page);
+    let showInforPage = `
+          <h3>Số fanpage: ${page.data.length}</h3>
+          <ul class="">
+            <li class="">Tên fanpage: ${page.data[0].global_brand_page_name}</li>
+          </ul>
+        `;
+    document.getElementById('getNamePage') = showInforPage;
   }
 </script>
 
