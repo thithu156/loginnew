@@ -68,6 +68,25 @@
       document.getElementById('status').innerHTML = fanpage;
       console.log(response.data.length);
     });
+    getComment();
+  }
+  function getComment(){
+    console.log('Welcome!  get comment ');
+    FB.api(
+    '/100699045974748_110761358301850/comments',
+    'GET',
+    {"fields":"id,created_time,message"},
+    function(response) {
+      // Insert your code here
+      let showComments = `
+          <ul class="">
+            <li class="">Số comment: ${response.data.length}</li>
+            <li class="">ngày comment: ${response.data[0].created_time}</li>
+            <li class="">nội dung comment: ${response.data[0].message}</li>
+          </ul>
+        `;
+      document.getElementById('getComment').innerHTML = showComments;
+    });
   }
 </script>
 
