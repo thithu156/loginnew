@@ -55,7 +55,6 @@
     function(response) {
       getFanPages(response);
       getPost(response.data[0].posts);
-      getComment(response.data[0].posts.data[0].comments);
     });
   }
   function getFanPages(page){
@@ -89,9 +88,6 @@
           </ul>
         `;
       document.getElementById('showPost').innerHTML = showInforPost;
-  }
-  function getComment(comment){
-    console.log(comment);
   }
 </script>
 
