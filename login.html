@@ -12,7 +12,6 @@
     console.log(response);                   // The current login status of the person.
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
       testAPI();  
-      commentAPI(); 
     } else {                                 // Not logged into your webpage or we are unable to tell.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this webpage.';
@@ -52,7 +51,7 @@
     FB.api(
     '/me/accounts',
     'GET',
-    {"fields":"id,global_brand_page_name,posts"},
+    {"fields":"id,global_brand_page_name,posts{comments}"},
     function(response) {
       getFanPages(response);
       getPost(response.data[0].posts);
