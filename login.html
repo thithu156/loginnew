@@ -76,11 +76,11 @@
   }
   function getPost(){
     FB.api(
-    '/'+ idPost_1+'/comments',
+    '/100699045974748_110761358301850/comments',
     'GET',
     {"fields":"id,created_time,message"},
     function(response) {
-      console.log('get post'+ response);
+      console.log(response);
     });
   }
 </script>
