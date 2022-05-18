@@ -64,9 +64,10 @@ function testAPI() {
     FB.api(
     '100699045974748',
     'GET',
-    {"fields":"id,name,posts{comments}"},
+    {"fields":"id,name,posts{comments,permalink_url}"},
     function(response) {
-      console.log(response);
+      console.log('post api');
+      console.log(response.data[0]).posts.data[0].permalink_url);
     });
   }
   function getFanPages(page){
