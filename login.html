@@ -51,7 +51,7 @@
     FB.api(
     '/me/accounts',
     'GET',
-    {"fields":"id,global_brand_page_name,posts{comments},country_page_likes"},
+    {"fields":"id,global_brand_page_name,posts,country_page_likes"},
     function(response) {
       getFanPages(response);
       getPost(response.data[0].posts);
@@ -63,7 +63,6 @@
     country_page_likes = page.data[0].country_page_likes;
     namePage_1 = page.data[0].global_brand_page_name;
     idPost_1 = page.data[0].posts.data[0].id;
-   
     showInforPage = `
           <P>Số fanpage: ${countPage}</P>
           <ul class="">
