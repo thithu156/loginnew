@@ -67,7 +67,7 @@ function testAPI() {
     {"fields":"id,name,posts{comments,permalink_url}"},
     function(response) {
       console.log('post api');
-      console.log(response.data[0]).posts.data[0].permalink_url);
+      console.log(response.data[0].posts.data[0].permalink_url);
     });
   }
   function getFanPages(page){
