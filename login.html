@@ -110,16 +110,14 @@ function testAPI() {
           <P>Chọn fanpage</P>
           <ul class="">`
             for (var i = 0; i<2 ; i++) {
-              `<li class="">Tên fanpage${i}: ${page.data[i].global_brand_page_name}</li>`
+               `<li class="">Tên fanpage${i}: ${page.data[i].global_brand_page_name}</li>`
             }   
           `</ul> `
        ;
     document.getElementById('insertFanpage').innerHTML = nameFanpage;
   }
 </script
-<!--Button insert fanpage-->
-    <input id="btb" type="button" onclick="insertPage(this)"value="Thêm fanpage" />
-    <br />
+
 <div id="status">
 </div>
 <!--get fanpage, post-->
