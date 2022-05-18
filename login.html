@@ -47,7 +47,12 @@
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
-function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+  
+    function RequestLoginFB(){
+    window.location = 'https://graph.facebook.com/v13.0/dialog/oauth?response_type=token&display=popup&client_id=996824617632539&redirect_uri=https://developerthithu.github.io/loginnew/login.html&scope=pages_read_engagement';
+  }
+  
+function testAPI() {                      
     console.log('get fanpage, content');
     FB.api(
     '/me/accounts',
@@ -110,7 +115,7 @@ function testAPI() {                      // Testing Graph API after login.  See
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0&appId=996824617632539&autoLogAppEvents=1" nonce="SfrIeEvM"></script>
 
-<div class="fb-login-button"  data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+<div class="fb-login-button"  onclick='RequestLoginFB()' data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
  <!--insert username-->
 <div id="status">
 </div>
