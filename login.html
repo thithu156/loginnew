@@ -6,7 +6,21 @@
 </head>
 <body>
 <script>
-
+  
+  //[1]Load lên các thành phần cần thiết
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '996824617632539',
+      cookie     : true,                     
+      xfbml      : true,                 
+      version    : 'v13.0'          
+    });
+    //Kiểm tra trạng thái hiện tại
+    FB.getLoginStatus(function(response) {  
+      statusChangeCallback(response);       
+    });
+  };
+  //[2]Xử lý trạng thái đăng nhập
   function statusChangeCallback(response) {  
     console.log('statusChangeCallback');
     console.log(response);                   
@@ -20,27 +34,10 @@
       document.getElementById('status').innerHTML = 'người dùng chưa đăng nhập vào facebook';
     }
   }
-
-
-  function checkLoginState() {               
-    FB.getLoginStatus(function(response) {   
-      statusChangeCallback(response);
-    });
+  //[3] yêu cầu đăng nhập
+  function RequestLoginFB(){
+    window.location = 'https://www.facebook.com/v13.0/dialog/oauth?response_type=token&display=popup&client_id=509164027576838&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer%2Fcallback&scope=pages_read_engagement';
   }
-
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '996824617632539',
-      cookie     : true,                     // Enable cookies to allow the server to access the session.
-      xfbml      : true,                     // Parse social plugins on this webpage.
-      version    : 'v13.0'           // Use this Graph API version for this call.
-    });
-
-
-    FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-      statusChangeCallback(response);        // Returns the login status.
-    });
-  };
   (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
          if (d.getElementById(id)) {return;}
@@ -48,10 +45,6 @@
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
-  
-  function RequestLoginFB(){
-    window.location = 'https://www.facebook.com/v13.0/dialog/oauth?response_type=token&display=popup&client_id=509164027576838&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer%2Fcallback&scope=pages_read_engagement';
-  }
   
 function testAPI() {                      
     console.log('get fanpage, content');
@@ -115,7 +108,7 @@ function testAPI() {
 
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0&appId=996824617632539&autoLogAppEvents=1" nonce="SfrIeEvM"></script>
-
+<!-- Button đăng nhập -->
 <div class="fb-login-button" onclick="RequestLoginFB()" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
  <!--insert username-->
 <div id="status">
