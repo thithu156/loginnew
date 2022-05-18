@@ -104,16 +104,17 @@ function testAPI() {
   }
   // insert button fanpage
   function insertPage(page){
-    console.log('tạo chức năng thêm fanpage');
+    console.log('vòng lập fanpage');
     console.log(page);
     nameFanpage= `
           <P>Chọn fanpage</P>
-          <ul class="">
-            <li class="">Tên fanpage 1: ${page.data[0].global_brand_page_name}</li>
-            <li class="">Tên fanpage 2: ${page.data[1].global_brand_page_name}</li>
-          </ul>
-        `;
-    alert(nameFanpage);
+          <ul class="">`
+            for (var i = 0; i<2 ; i++) {
+              `<li class="">Tên fanpage${i}: ${page.data[i].global_brand_page_name}</li>`
+            }   
+          `</ul> `
+       ;
+    document.getElementById('insertFanpage').innerHTML = nameFanpage;
   }
 </script
 <!--Button insert fanpage-->
@@ -126,6 +127,8 @@ function testAPI() {
 </div>
 <!--Get comment-->
 <div id="showPost">
+</div>
+<div id="insertFanpage">
 </div>
 </body>
 </html>
