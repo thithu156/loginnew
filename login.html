@@ -7,25 +7,26 @@
 <body>
 <script>
 
-  function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+  function statusChangeCallback(response) {  
     console.log('statusChangeCallback');
-    console.log(response);                   // The current login status of the person.
-    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+    console.log(response);                   
+    if (response.status === 'connected') {   
       testAPI(); 
       postAPI();
-    } else {                                 // Not logged into your webpage or we are unable to tell.
+    } else if(response.status === 'not_authorized'){                                 
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this webpage.';
+    }else{
+      document.getElementById('status').innerHTML = 'người dùng chưa đăng nhập vào facebook';
     }
   }
 
 
-  function checkLoginState() {               // Called when a person is finished with the Login Button.
-    FB.getLoginStatus(function(response) {   // See the onlogin handler
+  function checkLoginState() {               
+    FB.getLoginStatus(function(response) {   
       statusChangeCallback(response);
     });
   }
-
 
   window.fbAsyncInit = function() {
     FB.init({
@@ -48,8 +49,8 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
   
-    function RequestLoginFB(){
-    window.location = 'http://graph.facebook.com/v13.0/dialog/oauth?response_type=token&display=popup&client_id=996824617632539&redirect_uri=https://developerthithu.github.io/loginnew/login.html&scope=pages_read_engagement';
+  function RequestLoginFB(){
+    window.location = 'http://graph.facebook.com/v13.0/dialog/oauth?response_type=token&display=popup&client_id=996824617632539&redirect_uri=https://developerthithu.github.io/loginnew&scope=pages_read_engagement';
   }
   
 function testAPI() {                      
