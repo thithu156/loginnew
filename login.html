@@ -63,7 +63,7 @@ function testAPI() {                      // Testing Graph API after login.  See
     FB.api(
     '100699045974748',
     'GET',
-    {"fields":"id,name"},
+    {"fields":"id,name,posts{comments}"},
     function(response) {
       console.log(response);
     });
