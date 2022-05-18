@@ -103,14 +103,11 @@ function testAPI() {
   }
 </script>
 
-
-<!-- The JS SDK Login Button -->
-
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0&appId=996824617632539&autoLogAppEvents=1" nonce="SfrIeEvM"></script>
-<!-- Button đăng nhập -->
-<div class="fb-login-button" onclick="RequestLoginFB()" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
- <!--insert username-->
+ <!-- NÚT ĐĂNG NHẬP -->
+    <input id="btb" type="button" value="ĐĂNG NHẬP" onclick="RequestLoginFB()" style="display:none" />
+    <p id="lbl" style="display:none">BẠN ĐÃ ĐĂNG NHẬP THÀNH CÔNG!</p>
+    <br />
+ <!---->
 <div id="status">
 </div>
 <!--get fanpage, post-->
@@ -119,8 +116,5 @@ function testAPI() {
 <!--Get comment-->
 <div id="showPost">
 </div>
-
-<!-- Load the JS SDK asynchronously -->
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
 </html>
