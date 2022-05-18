@@ -27,6 +27,7 @@
     if (response.status === 'connected') {
       testAPI(); 
       postAPI();
+      commentAPI();
     } else if(response.status === 'not_authorized'){                                 
       document.getElementById('status').innerHTML = 'Please log ' +
         'into this webpage.';
@@ -63,6 +64,17 @@ function testAPI() {
     {"fields":"id,name,posts{comments,permalink_url}"},
     function(response) {
       console.log('post api');
+      console.log(response);
+    });
+  }
+  function commentAPI(){
+    FB.api(
+    '/100699045974748_110761358301850',
+    'GET',
+    {"fields":"comments"},
+    function(response) {
+      // Insert your code here
+      console.log('Lấy thông tin comment');
       console.log(response);
     });
   }
