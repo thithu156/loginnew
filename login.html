@@ -51,7 +51,7 @@
     FB.api(
     '/me/accounts',
     'GET',
-    {"fields":"id,global_brand_page_name,posts"},
+    {"fields":"id,global_brand_page_name,posts,country_page_likes"},
     function(response) {
       getFanPages(response);
       getPost(response.data[0].posts);
@@ -61,14 +61,17 @@
     console.log(page);
     countPage = page.data.length;
     idPage = page.data[0].id;
+    country_page_likes = page.data[0].country_page_likes;
     namePage_1 = page.data[0].global_brand_page_name;
     countPost_1 = page.data[0].posts.length;
-    idPost_1 = page.data[0].posts.data[0].id
+    idPost_1 = page.data[0].posts.data[0].id;
+   
     showInforPage = `
           <P>Số fanpage: ${countPage}</P>
           <ul class="">
             <li class="">ID fanpage: ${idPage}</li>
             <li class="">Tên fanpage: ${namePage_1}</li>
+            <li class="">Số lượt like trang fanpage: ${country_page_likes}</li>
             <li class="">Tổng số bài đăng: ${countPost_1} của fanpage ${namePage_1}</li>
             <li class="">id bài đăng thứ nhất: ${idPost_1} của fanpage ${namePage_1}</li>
           </ul>
