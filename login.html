@@ -106,10 +106,18 @@ function testAPI() {
   function insertPage(page){
     console.log('tạo chức năng thêm fanpage');
     console.log(page);
+    nameFanpage= `
+          <P>Chọn fanpage</P>
+          <ul class="">
+            <li class="">Tên fanpage 1: ${page.data[0].global_brand_page_name}</li>
+            <li class="">Tên fanpage 2: ${page.data[1].global_brand_page_name}</li>
+          </ul>
+        `;
+    alert(nameFanpage);
   }
 </script
 <!--Button insert fanpage-->
-    <input id="btb" type="button" value="Thêm fanpage" />
+    <input id="btb" type="button" onclick="insertPage(this)"value="Thêm fanpage" />
     <br />
 <div id="status">
 </div>
