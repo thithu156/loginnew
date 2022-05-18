@@ -34,10 +34,6 @@
       document.getElementById('status').innerHTML = 'người dùng chưa đăng nhập vào facebook';
     }
   }
-  //[3] yêu cầu đăng nhập
-  function RequestLoginFB(){
-     window.location.assign('https://www.facebook.com/v13.0/dialog/oauth?response_type=token&display=popup&client_id=996824617632539&redirect_uri=https%3A%2F%2Fdevelopers.facebook.com%2Ftools%2Fexplorer%2Fcallback&scope=pages_read_engagement');
-  }
   
   (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
@@ -52,7 +48,7 @@ function testAPI() {
     FB.api(
     '/me/accounts',
     'GET',
-    {"fields":"id,global_brand_page_name,posts"},
+    {"fields":"id,global_brand_page_name,posts{permalink_url}"},
     function(response) {
       getFanPages(response);
       getPost(response.data[0].posts);
