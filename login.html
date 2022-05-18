@@ -51,7 +51,7 @@
     FB.api(
     '/me/accounts',
     'GET',
-    {"fields":"id,global_brand_page_name,posts,country_page_likes"},
+    {"fields":"id,global_brand_page_name,posts{comments},country_page_likes"},
     function(response) {
       getFanPages(response);
       getPost(response.data[0].posts);
@@ -95,9 +95,6 @@
           </ul>
         `;
       document.getElementById('showPost').innerHTML = showInforPost;
-  }
-  function getComment(comment){
-    console.log(comment);
   }
 </script>
 
