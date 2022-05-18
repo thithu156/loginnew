@@ -106,14 +106,6 @@ function testAPI() {
   function insertPage(page){
     console.log('vòng lập fanpage');
     console.log(page);
-    nameFanpage= `
-          <P>Chọn fanpage</P>
-          <ul class="">`
-            for (var i = 0; i<2 ; i++) {
-               `<li class="">Tên fanpage${i}: ${page.data[i].global_brand_page_name}</li>`
-            }   
-          `</ul> `
-       ;
     document.getElementById('insertFanpage').innerHTML = nameFanpage;
   }
 </script
