@@ -79,9 +79,9 @@ function testAPI() {                      // Testing Graph API after login.  See
   function getPost(post){
     console.log(post);
     idPost = posts.data[0].id
-    dayPost = post.data[0].created_time;
-    contentPost = post.data[0].message;
-    comment = post.data[0].comments;
+    dayPost = posts.data[0].created_time;
+    contentPost = posts.data[0].message;
+    comment = posts.data[0].comments;
     console.log(comment);
     showInforPost = `
           <P>Thông tin về bài đăng</P>
