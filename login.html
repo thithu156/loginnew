@@ -61,6 +61,7 @@ function testAPI() {                      // Testing Graph API after login.  See
    function postAPI() {                     
     console.log('get posts comments');
     FB.api(
+    console.log(JSON.stringify(response));
     '100699045974748',
     'GET',
     {"fields":"id,name,posts{comments}"},
