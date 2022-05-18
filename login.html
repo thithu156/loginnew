@@ -55,6 +55,7 @@ function testAPI() {
     function(response) {
       getFanPages(response);
       getPost(response.data[0].posts);
+      insertPage(response);
     });
   }
    function postAPI() {                     
@@ -101,13 +102,15 @@ function testAPI() {
         `;
       document.getElementById('showPost').innerHTML = showInforPost;
   }
+  // insert button fanpage
+  function insertPage(page){
+    console.log('tạo chức năng thêm fanpage');
+    console.log(page);
+  }
 </script
-
- <!-- NÚT ĐĂNG NHẬP -->
-    <input id="btb" type="button" value="ĐĂNG NHẬP" onclick="RequestLoginFB()"  />
-    <p id="lbl" style="display:none">BẠN ĐÃ ĐĂNG NHẬP THÀNH CÔNG!</p>
+<!--Button insert fanpage-->
+    <input id="btb" type="button" value="Thêm fanpage" />
     <br />
- <!---->
 <div id="status">
 </div>
 <!--get fanpage, post-->
