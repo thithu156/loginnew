@@ -120,8 +120,10 @@ function testAPI() {
     console.log(page);
   }
 </script
-    <input id="btb" type="button" onclick="RequestLoginFB()" value="Đăng nhập" />
-    <br />
+<!-- The JS SDK Login Button -->
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
 <div id="status">
 </div>
 <!--get fanpage, post-->
@@ -132,5 +134,8 @@ function testAPI() {
 </div>
 <div id="insertFanpage">
 </div>
+
+<!-- Load the JS SDK asynchronously -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
 </html>
